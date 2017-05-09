@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+    </h:head>
+   <h:form>
+    <div id="header">           
+           <h1 id="headertext">Online Brokerage System</h1>
+           <div class="sideheader">
+              
+               <h:commandLink value="Home" action="index.xhtml"></h:commandLink><br></br><br></br>
+                    
+                 
+           </div>
+        </div>
+        </h:form>
+<h:body>
+        <div id="body">
+            <div id="form">
+                <h:form>
+                 <p>
+                     Please Enter your Login ID : <br></br>
+                     <h:inputText id="login" value="#{loginUser.loginid}" required="true"
+                                  requiredMessage="Please provide your login ID" ></h:inputText><br></br>
+                </p>
+                    <p>
+                        Please Enter Your Password : <br></br>
+                        <h:inputSecret id="pass" value="#{loginUser.pass}" required="true"
+                                       requiredMessage="Please enter your password"></h:inputSecret>
+                    </p>
+                    <h:commandButton id="btn" value="Login" action="#{loginUser.login()}"></h:commandButton><br></br>
+                    <h:outputLabel value="#{loginUser.msg}"></h:outputLabel>
+                </h:form>
+                    
+                
+                
+            </div>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>User Registered</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+    </h:head>
+    <h:form>
+    <div id="header">           
+           <h1 id="headertext">Online Brokerage System</h1>
+           <div class="sideheader">
+              
+               <h:commandLink value="Home" action="index.xhtml"></h:commandLink><br></br><br></br>
+                    
+                 
+           </div>
+        </div>
+        </h:form>
+    <h:body>
+         <ui:include src="header.xhtml"></ui:include>
+         <div id="body">
+             <div id="form">
+                 <h:form>
+                     <h2>Congrats, You have successfully Registered</h2>
+                     <h4>Your Account Number : </h4><h:outputLabel value="#{user.accountnumber}" /><br></br>
+                     <h4>Your Login ID : </h4><h:outputLabel value="#{user.loginid}"></h:outputLabel><br></br>
+                     <h4>Balance : </h4><h:outputLabel value="#{user.amount}"/><br></br><br></br>
+                     <p>You can now login in by clicking the below link.</p>
+                     <h:commandLink value="Login" action="Login.xhtml"></h:commandLink>
+                 </h:form>
+             </div>
+         </div>
+    </h:body>
+</html>
+

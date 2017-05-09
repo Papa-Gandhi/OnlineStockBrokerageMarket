@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+     <h:head>
+        <title>Display Orders</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+    </h:head>
+    <h:form>
+    <div id="header">           
+           <h1 id="headertext">Online Brokerage System</h1>
+           <div class="sideheader">
+              
+               <h:commandLink value="Trade" action="TradeMenu.xhtml"></h:commandLink><br></br><br></br>
+                    <h:commandLink value="Display Watchlist" action="#{loginUser.gotowatchlist()}"></h:commandLink><br></br><br></br>
+                    <h:commandLink value="Search" action="#{loginUser.gotosearchstock()}"></h:commandLink><br></br><br></br>
+                    <h:commandLink value="Display Orders" action="#{loginUser.displayorders()}"></h:commandLink><br></br><br></br>
+                    <h:commandLink value="View your stocks" action="#{loginUser.gotodisplayuserstocks()}"></h:commandLink><br></br><br></br>
+                    <h:commandLink value="View Balance" action="#{loginUser.gotoviewbalance()}"></h:commandLink><br></br><br></br>
+                    <h:commandLink value="Add Balance" action="#{loginUser.gotoaddbalance()}"></h:commandLink><br></br><br></br>
+                    <h:commandLink value="Change Password" action="#{loginUser.gotochangepassword()}"></h:commandLink><br></br><br></br>
+                    <h:commandLink value="Log out" action="#{loginUser.logout()}"></h:commandLink><br></br><br></br>  
+                 
+           </div>
+        </div>
+        </h:form>
+    <h:body>
+        <div id="form">
+             <h:form>
+                 <p>
+                     <h:outputText id="msg" value="#{loginUser.msg}"></h:outputText>
+                 </p>
+        </h:form>
+        </div>
+       
+    </h:body>
+</html>
+

@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registration</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+    </h:head>
+    <h:form>
+    <div id="header">           
+           <h1 id="headertext">Online Brokerage System</h1>
+           <div class="sideheader">
+              
+               <h:commandLink value="Home" action="index.xhtml"></h:commandLink><br></br><br></br>
+                    
+                 
+           </div>
+        </div>
+        </h:form>
+    <h:body>
+        <ui:include src="header.xhtml"></ui:include>
+        <div id="body">
+            <div id="form">
+                <h:form>
+                <p>Please Enter your SSN : <br></br>
+                <h:inputText id="ssn" required="true" requiredMessage="
+                             SSN cannot be empty" title="Please enter your SSN"
+                             value="#{user.ssn}" validatorMessage="Please enter a valid SSN">
+                             <f:validateLength minimum="5" maximum="5"></f:validateLength></h:inputText>
+               </p>
+                
+                <p>Please Enter your Name : <br></br>
+                <h:inputText id="name" required="true" requiredMessage="
+                             Name cannot be empty" title="Please enter your Name"
+                             value="#{user.name}"></h:inputText>
+               </p>
+                
+                <p>Please Enter a login id : <br></br>
+                <h:inputText id="id" required="true" requiredMessage="
+                             login id cannot be empty" title="Please enter a login id"
+                             value="#{user.loginid}"></h:inputText>
+               </p>
+                
+                <p>Please Enter a password for your account : <br></br>
+                    <h:inputSecret id="pass" required="true"  requiredMessage="
+                             password cannot be empty" title="Please enter a password"
+                             value="#{user.pass}">
+                    <f:validateLength minimum="5" maximum="15"></f:validateLength>
+                </h:inputSecret>
+               </p>
+                
+                <p>Please select a security Question : <br></br>
+                    <h:selectOneMenu value="#{user.sec1}">
+                        <f:selectItem itemValue="What is the name of your favorite childhood friend?" itemLabel="What is the name of your favorite childhood friend?" />
+                        <f:selectItem itemValue="What is the middle name of your oldest child?" itemLabel="What is the middle name of your oldest child?" />
+                        <f:selectItem itemValue="What is your favorite movie?" itemLabel="What is your favorite movie?" />
+                        <f:selectItem itemValue="What was your favorite food as a child?" itemLabel="What was your favorite food as a child?" />
+                        <f:selectItem itemValue="What was the make and model of your first car?" itemLabel="What was the make and model of your first car?" />
+                    </h:selectOneMenu><br></br>
+                    <h:inputText id="sec1ans" value="#{user.sec1ans}" required="true" requiredMessage="Must provide a answer"
+                                 title="Please provide a answer"></h:inputText>
+               </p>
+                
+                
+                 <p>Please select a security Question : <br></br>
+                     <h:selectOneMenu value="#{user.sec2}">
+                         <f:selectItem itemValue="What was your childhood nickname?" itemLabel="What was your childhood nickname?" />
+                         <f:selectItem itemValue="In what city or town did your mother and father meet?" itemLabel="In what city or town did your mother and father meet?" />
+                         <f:selectItem itemValue="What is your favorite team?" itemLabel="What is your favorite team?" />
+                         <f:selectItem itemValue="What was your favorite sport in high school?" itemLabel="What was your favorite sport in high school?" />
+                         <f:selectItem itemValue="What is the first name of the boy or girl that you first kissed?" itemLabel="What is the first name of the boy or girl that you first kissed?" />
+                     </h:selectOneMenu><br></br>
+                     <h:inputText id="sec2ans" value="#{user.sec2ans}" required="true" requiredMessage="Must provide a answer"
+                                 title="Please provide a answer"></h:inputText>
+               </p>
+                
+                <p>Please enter initial balance : <br></br>
+                    <h:inputText id="amount" value="#{user.amount}"></h:inputText>                    
+                </p>
+                 <h:commandButton id="btn" value="Register" action="#{user.register}"></h:commandButton>
+                 <h:outputLabel value="#{user.msg}"></h:outputLabel>
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>
+
